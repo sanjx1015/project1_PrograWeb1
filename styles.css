@@ -1,8 +1,10 @@
 
 :root {
-    --text-color: #1a1c20;
-    --link-color: #4a76ee;
-    --background-color: #eeeff1;
+    --text-color: #f1f2f4;
+    --link-color: #010511;
+    --background-color: #051d4b;
+    --background-color2: #c4c10f;
+
 
 }
 
@@ -19,8 +21,9 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif; /*family de fuentes, y valor predeterminado por si no carga */
+    max-width: none;
     background-color: var(--background-color);
-    max-width: 1400px;
+    margin: 0 auto;
 }
 
 a{
@@ -34,14 +37,11 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color:var(--background-color);
 
-    padding: 0 50px;
+
+    padding: 0 100px;
     height: 80px;
-
-    position: sticky;
-    top:0;
-    z-index: 1000;
-
 }
 
 nav .left a{
@@ -50,6 +50,7 @@ nav .left a{
     font-weight: 600;
 
 }
+
 
 nav .right a {
     color: var(--text-color);
@@ -68,6 +69,8 @@ nav .right a span {
     margin-left: 0 5px;
 }
 
+
+
 /*==========SECTION 1: HERO==========*/
 .hero-section{
     display:flex;
@@ -77,18 +80,24 @@ nav .right a span {
     margin: 50px 0;
     margin-bottom: 100px;
     gap: 40px; 
+    background-color:var(--background-color2);
+    /*background: linear-gradient(to right, rgba(244, 240, 232, 0.937) , antiquewhite);*/
 
 }
 
 .hero-section .text{
     flex: 5;
-
-    background: linear-gradient(to right, var(--background-color), #8383842b);
 }
 
 
 .hero-section .text h1{
     font-size: 5vh;
+    /*Este valor no es fijo, depende del dispositivo
+    Hay una formula para calcularlo*/
+}
+
+.hero-section .text h2{
+    font-size: 3vh;
     /*Este valor no es fijo, depende del dispositivo
     Hay una formula para calcularlo*/
 }
@@ -127,70 +136,11 @@ nav .right a span {
     width: 350px;
 }
 
-/*==========SECTION 2: SKILLS==========*/
-
-.skills-section {
-    padding: 0 50px;
-    margin-bottom: 100px;
-}
-
-.skills-section h2{
-    text-align: center;
-    font-size: 35px;
-}
-
-.skills-section .text{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.skills-section .cells{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /*se ajusta conforme de cambie la pantalla*/
-}
 
 
-
-.skills-section .cells .cell{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    width: 150px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: 1.5px solid #d3d3d3;
-    border-radius: 5px;
-
-    transition: .1s;
-    cursor: pointer;
-
-}
-
-.skills-section .cells .cell:hover{
-    background-color:#d3d3d3;
-    border-color: var(--text-color);
-    transform: translateY(-5px); /*eleva la tarjeta 5 pixeles hacia arriba*/
-}
-
-/*
-.skills-section .cells .cell img{
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    border-radius: 2px;
-}
-*/
-.skills-section .cells .cell span{
-   font-size: 18px;
-}
-
-
-
-/*==========SECTION 3: Sobre Mi==========*/
+/*==========SECTION 2: Sobre Mi==========*/
 .aboutme-section{
+    color: var(--text-color);
     padding: 0 50px;
     margin-bottom: 100px;
 }
@@ -233,30 +183,162 @@ nav .right a span {
     flex: 8; 
 }
 
+/*==========SECTION 3: Habilidades==========*/
+
+.skills-section {
+    padding: 0 50px;
+    margin-bottom: 20px;
+    background-color: #c4c10f;
+}
+
+.skills-section h2{
+    text-align: center;
+    font-size: 35px;
+}
+
+.skills-section .text{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills-section .cells{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    justify-content:center;
+    flex-wrap: wrap; /*se ajusta conforme de cambie la pantalla*/
+}
+
+
+
+.skills-section .cells .cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 150px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1.5px solid #d3d3d3;
+    border-radius: 5px;
+
+    transition: .1s;
+    cursor: pointer;
+
+}
+
+.skills-section .cells .cell:hover{
+    background-color:#d3d3d3;
+    border-color: var(--text-color);
+    transform: translateY(-5px); /*eleva la tarjeta 5 pixeles hacia arriba*/
+}
+
+/*
+.skills-section .cells .cell img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 2px;
+}
+*/
+.skills-section .cells .cell span{
+   font-size: 18px;
+}
+
+
+
 /*==========SECTION 4: Proyectos==========*/
 .proyect-section{
     padding: 0 50px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .proyect-section h2{
-    font-size: 35px;
-    margin-bottom: 30px;
+    color:var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/*Contenedor de proyectos*/
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--text-color);
+    gap: 100px;
+}
+
+.proyecto{
+    width: 300px;
+    background-color: var(--text-color);
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    transition: .5s;
+    box-shadow: -5px 5px 50px var(--background-color2);
+}
+
+.proyecto:hover{
+    transform: translateY(-8px);
+}
+
+.proyecto figure{
+    margin: 0;
+    width: 100%;
+    height: 200px;
+}
+
+.proyecto img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+
+}
+.proyecto:nth-child(2) img{
+    object-fit:scale-down;
+
+}
+
+.proyecto-info{
+    padding: 20px;
+    color: var(--link-color);
+
+}
+
+.proyecto-info h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-decoration: underline;
+    text-align: center;
+}
+.proyecto-info p{
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 15px;
+
+}
+
+.proyecto-info span{
+    font-size: 12px;
+    font-weight: bold;
 }
 
 
 /*==========SECTION 5: CONTACTO==========*/
 .contact-section{
+    background-color:var(--background-color2);
     padding: 0 50px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .contact-section h2{
+    text-align: center;
     font-size: 35px;
 }
 
 .contact-section .group{
     display: flex;
+    margin: 20px;
     gap: 50px;
 }
 
@@ -276,14 +358,14 @@ nav .right a span {
     font-family: 'Poppins', sans-serif;
     border: 2px solid var(--link-color);
     background-color: transparent;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-bottom: 12px;
     /*outline: none*/
     resize: none;
 }
 
 .contact-section .group form button{
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
     color: #fff;
     background-color: var(--link-color);
@@ -301,18 +383,30 @@ nav .right a span {
 
 /*===============FOOTER===============*/
 footer{
+    color:var(--text-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 0 50px;
-    height: 80px;
+    height: 100px;
 
     font-size: 10px;
 
     gap: 3;
 }
 
+footer .right2 {
+    padding: 5px 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+} 
+
+footer .right2 a{
+    color: var(--text-color);
+    margin: 0 2px;
+    height: 10px;
+}
 
 
 
@@ -338,7 +432,7 @@ footer{
         width: 300;
     }
 
-    /*SECTION 3: sibre mi*/
+    /*SECTION 2: sobre mi*/
     .aboutme-section{
         text-align: center;
     }
@@ -386,7 +480,12 @@ footer{
         font-size: 30px;
     }
 
-    /*==========SECTION 2: SKILLS==========*/
+   /*==========SECTION 3: sobre mi==========*/
+    .aboutme-section{
+        padding: 0 20px;
+    }
+
+    /*==========SECTION 3: SKILLS==========*/
     .skills-section{
         padding: 0 20px;
         
@@ -397,14 +496,10 @@ footer{
     }
 
     
-    /*==========SECTION 3: sobre mi==========*/
-    .aboutme-section{
-        padding: 0 20px;
-    }
-    
     /*==========SECTION 4: CONTACT==========*/
     .contact-section{
         padding: 0 20px;
     }
+
 }
 
