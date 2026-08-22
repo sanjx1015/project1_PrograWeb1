@@ -5,6 +5,6 @@ Se realizo una pagina web utilizando HTML y CSS (excepto CSS Grid). Sin usar her
 
 El proyecto se almaceno en el siguiente repositorio en github:
 
-link repositorio gitHub:
+link GitHub Pages:
 
-https://github.com/sanjx1015/proyect1_PrograWeb1.git 
+https://sanjx1015.github.io/project1_PrograWeb1/
